@@ -17,3 +17,6 @@ class User(BaseModel):
 
 class UserDetail(User):
     books: List[Book] = []
+
+class UserCreate(User):
+    password: str

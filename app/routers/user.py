@@ -14,7 +14,11 @@ router = APIRouter()
 async def read_users(db: Session = Depends(get_db)):
     return crud.read_users(db=db)
 
+@router.post('/', response_model=UserSchema)
+async def create_user(user: UserSchema, db: Session = Depends(get_db)):
+    return crud.create_user(user=user, db=db)
 
 @router.get('/{user_id}', response_model=UserDetailSchema)
 async def read_user(user_id: UUID, db: Session = Depends(get_db)):
     return crud.read_user(user_id=user_id, db=db)
+
