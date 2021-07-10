@@ -3,6 +3,7 @@ from typing import List
 from pydantic import BaseModel
 from uuid import UUID
 from .book import Book
+from .item import Item
 
 
 class User(BaseModel):

@@ -1,5 +1,5 @@
 from database import SessionLocal
-from models import Book, User
+from models import Book, User, Item
 
 db = SessionLocal()
 
@@ -17,6 +17,11 @@ def seed():
 
     db.add(user)
     db.commit()
+
+    # item_title = 'TEST ITEM'
+    # item = Item(title=item_title)
+    # db.add(item)
+    # db.commit()
 
 
 if __name__ == '__main__':
